@@ -1,0 +1,13 @@
+<sdf version="1.6">
+    <actor name="actor">
+      <skin>
+        <filename>model://ManWithSuit/meshes/Man_with_suit.dae</filename>
+        <scale>1.0</scale>
+      </skin>
+      <pose>0 0 0 0 0 0</pose>
+      <animation name="stand">
+        <filename>model://ManWithSuit/meshes/Man_with_suit.dae</filename>
+        <scale>1.000000</scale>
+      </animation>
+    </actor>
+</sdf>

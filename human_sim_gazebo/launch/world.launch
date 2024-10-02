@@ -1,0 +1,6 @@
+<launch>
+    <env name="GAZEBO_MODEL_PATH" value="$(find human_sim_gazebo)/actor_files/"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find human_sim_gazebo)/worlds/the_world.world"/>
+    </include>
+</launch>
