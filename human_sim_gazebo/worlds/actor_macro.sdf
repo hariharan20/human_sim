@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+    <define name="custom_actor">
+        <arg name="type" default="Children"/>
+        <arg name="name" default="c_pajama"/>
+        <arg name="pose" default="0 0 0 0 0 0"/>
+        <arg name="id" default="0"/>
+        <actor name="actor1">
+            <pose>$pose</pose>
+            <skin>
+              <filename>model://human_sim_models/$type/$name/walk.dae</filename>
+            </skin>
+            <animation name="walking">
+              <filename>model://human_sim_models/$type/$name/walk.dae</filename>
+              <interpolate_x>true</interpolate_x>
+            </animation>
+            <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+              <follow_mode>velocity</follow_mode>
+              <vel_topic>$type_$id/cmd_vel</vel_topic>
+              <animation_factor>1.0</animation_factor>
+              <linear_tolerance>0.1</linear_tolerance>
+              <linear_velocity>1</linear_velocity>
+              <angular_tolerance>0.0872</angular_tolerance>
+              <angular_velocity>2.5</angular_velocity>
+              <default_rotation>1.57</default_rotation>
+            </plugin>
+        </actor>
+    </define>
+</sdf>

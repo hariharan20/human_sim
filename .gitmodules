@@ -5,3 +5,6 @@
 [submodule "gazebo-ros-actor-plugin"]
 	path = gazebo-ros-actor-plugin
 	url = https://github.com/blackcoffeerobotics/gazebo-ros-actor-plugin.git
+[submodule "human_sim_gazebo/actor_files/human_sim_models"]
+	path = human_sim_gazebo/actor_files/human_sim_models
+	url = https://gitlab.com/hariharan201/human_sim_models.git

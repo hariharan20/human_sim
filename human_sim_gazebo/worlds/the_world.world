@@ -9,26 +9,105 @@
       <uri>model://ground_plane</uri>
       <pose>0 0 0 0 0 0</pose>
     </include>
-    <actor name="actor1">
-      <pose>0 0 1.2138 0 0 0</pose>
-      <skin>
-        <filename>moonwalk.dae</filename>
-      </skin>
-      <animation name="walking">
-        <filename>walk.dae</filename>
-        <interpolate_x>true</interpolate_x>
-      </animation>
-      <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
-        <follow_mode>velocity</follow_mode>
-        <vel_topic>/cmd_vel</vel_topic>
-        <animation_factor>1.0</animation_factor>
-        <linear_tolerance>0.1</linear_tolerance>
-        <linear_velocity>1</linear_velocity>
-        <angular_tolerance>0.0872</angular_tolerance>
-        <angular_velocity>2.5</angular_velocity>
-        <default_rotation>1.57</default_rotation>
-      </plugin>
+    <actor name="Child">
+        <pose>0 0 0.6 0 0 0</pose>
+        <skin>
+          <filename>model://human_sim_models/Children/c_pajama/walk.dae</filename>
+        </skin>
+        <animation name="walking">
+          <filename>model://human_sim_models/Children/c_pajama/walk.dae</filename>
+          <interpolate_x>true</interpolate_x>
+        </animation>
+        <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+          <follow_mode>velocity</follow_mode>
+          <vel_topic>child/cmd_vel</vel_topic>
+          <animation_factor>1.0</animation_factor>
+          <linear_tolerance>0.1</linear_tolerance>
+          <linear_velocity>1</linear_velocity>
+          <angular_tolerance>0.0872</angular_tolerance>
+          <angular_velocity>0</angular_velocity>
+          <default_rotation>1.1</default_rotation>
+        </plugin>
     </actor>
-
+    <actor name="Female">
+        <pose>0 2 0.8 0 0 0</pose>
+        <skin>
+          <filename>model://human_sim_models/Female/w_50s/walk.dae</filename>
+        </skin>
+        <animation name="walking">
+          <filename>model://human_sim_models/Female/w_50s/walk.dae</filename>
+          <interpolate_x>true</interpolate_x>
+        </animation>
+        <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+          <follow_mode>velocity</follow_mode>
+          <vel_topic>Female/cmd_vel</vel_topic>
+          <animation_factor>1.0</animation_factor>
+          <linear_tolerance>0.1</linear_tolerance>
+          <linear_velocity>1</linear_velocity>
+          <angular_tolerance>0.0872</angular_tolerance>
+          <angular_velocity>0</angular_velocity>
+          <default_rotation>1.1</default_rotation>
+        </plugin>
+    </actor>
+    <actor name="Male">
+        <pose>2 0 0.9 0 0 0</pose>
+        <skin>
+          <filename>model://human_sim_models/Male/m_canadian/walk.dae</filename>
+        </skin>
+        <animation name="walking">
+          <filename>model://human_sim_models/Male/m_canadian/walk.dae</filename>
+          <interpolate_x>true</interpolate_x>
+        </animation>
+        <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+          <follow_mode>velocity</follow_mode>
+          <vel_topic>Male/cmd_vel</vel_topic>
+          <animation_factor>1.0</animation_factor>
+          <linear_tolerance>0.1</linear_tolerance>
+          <linear_velocity>1</linear_velocity>
+          <angular_tolerance>0.0872</angular_tolerance>
+          <angular_velocity>2.5</angular_velocity>
+          <default_rotation>1.1</default_rotation>
+        </plugin>
+    </actor>
+    <actor name="Patient">
+        <pose>1 0 0 0 0 0</pose>
+        <skin>
+          <filename>model://PatientRollingWalker/meshes/PatientRollingWalker.dae</filename>
+        </skin>
+        <animation name="walking">
+          <filename>model://PatientRollingWalker/meshes/PatientRollingWalker.dae</filename>
+          <interpolate_x>true</interpolate_x>
+        </animation>
+        <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+          <follow_mode>velocity</follow_mode>
+          <vel_topic>Patient/cmd_vel</vel_topic>
+          <animation_factor>1.0</animation_factor>
+          <linear_tolerance>0.1</linear_tolerance>
+          <linear_velocity>1</linear_velocity>
+          <angular_tolerance>0.0872</angular_tolerance>
+          <angular_velocity>2.5</angular_velocity>
+          <default_rotation>0</default_rotation>
+        </plugin>
+    </actor>
+    <actor name="Doctor">
+        <pose>0 1 0 0 0 0</pose>
+        <skin>
+          <filename>model://DoctorFemaleWalk/meshes/DoctorFemaleWalk.dae</filename>
+        </skin>
+        <animation name="walking">
+          <filename>model://DoctorFemaleWalk/meshes/DoctorFemaleWalk.dae</filename>
+          <interpolate_x>true</interpolate_x>
+        </animation>
+        <plugin name="actor_plugin" filename="libgazebo_ros_actor_command.so">
+          <follow_mode>velocity</follow_mode>
+          <vel_topic>Doctor/cmd_vel</vel_topic>
+          <animation_factor>1.0</animation_factor>
+          <linear_tolerance>0.1</linear_tolerance>
+          <linear_velocity>1</linear_velocity>
+          <angular_tolerance>0.0872</angular_tolerance>
+          <angular_velocity>2.5</angular_velocity>
+          <default_rotation>0</default_rotation>
+        </plugin>
+    </actor>
   </world>
 </sdf>
